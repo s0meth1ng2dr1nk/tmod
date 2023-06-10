@@ -1,5 +1,5 @@
 FROM debian:bullseye-slim
-RUN mkdir -p /tmod/tmodloader /opt/tmod
+RUN mkdir -p /tmod/tmodloader
 COPY entrypoint.sh /tmod
 RUN apt update && \
     apt install -y \
