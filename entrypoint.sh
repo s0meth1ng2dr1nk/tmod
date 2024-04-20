@@ -1,8 +1,10 @@
-#!/usr/bin/env bash
-tmux new-session -d bash /tmod/tmodloader/start-tModLoaderServer.sh -nosteam -config /opt/tmod/tModLoader/server.config -savedirectory /opt/tmod 
+#!/bin/bash
+TMOD_EXECUTOR=${TMOD_LIB_DIR}/start-tModLoaderServer.sh
+chmod u+x ${TMOD_EXECUTOR}
+tmux new-session -d ${TMOD_EXECUTOR} -nosteam -config ${TMOD_CONFIG_DIR}/server.config -savedirectory $(dirname ${TMOD_CONFIG_DIR})
 while true; do
-    sleep 300 && \
-    tmux send-keys "say saving...." Enter && \
+    sleep ${SAVE_INTERVAL} && \
+    tmux send-keys "say SAVE NOW!" Enter && \
     tmux send-keys "save" Enter && \
-    tmux send-keys "say saved!" Enter
+    tmux send-keys "say SAVE COMPLETE!" Enter
 done
