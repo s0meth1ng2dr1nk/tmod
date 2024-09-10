@@ -10,3 +10,4 @@ services:
     volumes:
       - ${TMOD_CONFIG_DIR}:${TMOD_CONFIG_DIR}
     restart: always
+
