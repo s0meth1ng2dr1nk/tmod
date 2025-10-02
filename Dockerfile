@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM debian:trixie-slim
 ARG TMOD_URL=https://github.com/tModLoader/tModLoader/releases/latest/download/tModLoader.zip
 ENV TMOD_LIB_DIR=/tmod/lib
 WORKDIR ${TMOD_LIB_DIR}
